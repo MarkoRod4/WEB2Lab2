@@ -1,0 +1,26 @@
+{
+  "name": "web2lab2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean; npm run copy-views; npm run copy-styless",
+    "clean": "rm -rf dist",
+    "copy-views": "cp -r views/ dist/",
+    "copy-styles": "cp -r styles/ dist/",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "path": "^0.12.7",
+    "pg": "^8.13.1",
+    "xss": "^1.0.15"
+  }
+}

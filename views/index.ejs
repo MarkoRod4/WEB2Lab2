@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css">
+    <title>2. Projekt - Sigurnost</title>
+</head>
+<body>
+    <h1>2. Projekt - Sigurnost</h1>
+
+    <div>
+        <h3>1. Zadatak - Cross-site scripting (XSS)</h3>
+        <p>Opis:</p>
+        <pre><%= locals.upute1 || '' %></pre>
+
+        <form method="post" action="/xssattack">
+            <label>
+                Unos teksta:
+                <input type="text" name="textinput" placeholder="Unesite tekst"/>
+            </label>
+            <label>
+                <input type="checkbox" name="xssattackswitch"/>Uključi/Isključi ranjivost
+            </label>
+            <button type="submit">OK</button>
+        </form>
+    </div>
+
+    <div>
+        <h3>2. Zadatak - Nesigurna pohrana osjetljivih podataka (Sensitive Data Exposure)</h3>
+        <p>Opis:</p>
+        <pre><%= locals.upute2 || '' %></pre>
+
+        <div class="row">
+            <div>
+                <h5>Registracija korisnika:</h5>
+
+                <form  method="post" action="/register">
+                    <label>
+                        Korisničko ime:
+                        <input type="text" name="username"/>
+                    </label>
+                    <label>
+                        Lozinka:
+                        <input type="password" name="password"/>
+                    </label>
+                    <label>
+                        Potvrdi lozinku:
+                        <input type="password"name="confirmpassword"/>
+                    </label>
+                    <label>
+                        <input type="checkbox" name="safeswitch"/>Uključi/Isključi ranjivost
+                    </label>
+                    <button type="submit">OK</button>
+                    <%= locals.registertext || '' %>
+                </form>
+            </div>
+            <div>
+                <h5>Prijava korisnika:</h5>
+    
+            <form  method="post" action="/login">
+                <label>
+                    Korisničko ime:
+                    <input type="text" name="username"/>
+                </label>
+                <label>
+                    Lozinka:
+                    <input type="password" name="password"/>
+                </label>
+                <button type="submit">OK</button>
+            </form>
+            </div>
+        </div>
+        
+        <button onclick="window.location.href='/users';">Pregled podataka o korisnicima</button>
+    </div>
+</body>
+</html>
