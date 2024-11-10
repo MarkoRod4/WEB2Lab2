@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean; npm run copy-views; npm run copy-styless",
+    "build": "npm run clean; npm run copy-views; npm run copy-styles",
     "clean": "rm -rf dist",
     "copy-views": "cp -r views/ dist/",
     "copy-styles": "cp -r styles/ dist/",
